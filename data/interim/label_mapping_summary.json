@@ -1,0 +1,283 @@
+{
+  "label_mapping_timestamp": "2026-05-03T16:26:02Z",
+  "phase": "Phase 4 — Label Mapping and Uncertain Case Review",
+  "input_file": "data/interim/filtered_recalls.csv",
+  "outputs": {
+    "auto_labeled_recalls": "data/interim/auto_labeled_recalls.csv",
+    "uncertain_recalls": "data/interim/uncertain_recalls.csv"
+  },
+  "total_rows": 117,
+  "labeled_rows": 103,
+  "uncertain_rows": 14,
+  "rows_with_multiple_labels": 6,
+  "positive_count_per_label": {
+    "PATHOGEN_CONTAMINATION": 60,
+    "MYCOTOXIN_OR_CHEMICAL_CONTAMINATION": 10,
+    "NUTRITIONAL_IMBALANCE_OR_TOXICITY": 12,
+    "FOREIGN_MATERIAL_CONTAMINATION": 12,
+    "LABELING_OR_UNDECLARED_INGREDIENT_ISSUE": 2,
+    "QUALITY_OR_PROCESS_CONTROL_ISSUE": 14
+  },
+  "positive_count_per_label_labeled_rows_only": {
+    "PATHOGEN_CONTAMINATION": 60,
+    "MYCOTOXIN_OR_CHEMICAL_CONTAMINATION": 10,
+    "NUTRITIONAL_IMBALANCE_OR_TOXICITY": 12,
+    "FOREIGN_MATERIAL_CONTAMINATION": 12,
+    "LABELING_OR_UNDECLARED_INGREDIENT_ISSUE": 2,
+    "QUALITY_OR_PROCESS_CONTROL_ISSUE": 14
+  },
+  "uncertain_reason_counts": {
+    "vague-only wording without a clear risk cause": 1,
+    "no rule matched": 13
+  },
+  "rule_patterns": {
+    "PATHOGEN_CONTAMINATION": [
+      {
+        "pattern": "\\bsalmonell+a\\b|\\bsalmonella\\s+spp\\.?\\b|\\bsalmonella\\s+\\w+\\b",
+        "description": "Salmonella"
+      },
+      {
+        "pattern": "\\blisteria\\b|\\blisteria\\s+monocytogenes\\b|\\blisteria\\s+spp\\.?\\b",
+        "description": "Listeria"
+      },
+      {
+        "pattern": "\\be[\\.\\s-]*coli\\b|\\bescherichia\\s+coli\\b",
+        "description": "E. coli"
+      },
+      {
+        "pattern": "\\benterobacteriaceae\\b",
+        "description": "Enterobacteriaceae"
+      },
+      {
+        "pattern": "\\bpathogenic\\s+micro[- ]?organisms?\\b",
+        "description": "pathogenic microorganisms"
+      },
+      {
+        "pattern": "\\bfoodborne\\s+illness\\b",
+        "description": "foodborne illness"
+      },
+      {
+        "pattern": "\\bmicrobial\\s+hazard\\b|\\bmicrobiological\\b",
+        "description": "microbial hazard"
+      },
+      {
+        "pattern": "\\bmesophiles?\\s+aerobic\\b|\\baerobic\\s+mesophiles?\\b",
+        "description": "aerobic mesophiles"
+      },
+      {
+        "pattern": "\\bbird\\s+flu\\b|\\bavian\\s+influenza\\b",
+        "description": "avian influenza"
+      },
+      {
+        "pattern": "\\bbacteria\\b|\\bbacterial\\b|\\bbacterium\\b",
+        "description": "bacterial hazard"
+      }
+    ],
+    "MYCOTOXIN_OR_CHEMICAL_CONTAMINATION": [
+      {
+        "pattern": "\\baflatoxin\\b|\\bmycotoxin\\b|\\bvomitoxin\\b|\\bdeoxynivalenol\\b|\\bDON\\b",
+        "description": "mycotoxin"
+      },
+      {
+        "pattern": "\\bpesticide\\s+residues?\\b|\\bpesticide\\b",
+        "description": "pesticide residue"
+      },
+      {
+        "pattern": "\\bethylen[e]?\\s+oxide\\b",
+        "description": "ethylene oxide"
+      },
+      {
+        "pattern": "\\bchlorpyrifos\\b",
+        "description": "chlorpyrifos"
+      },
+      {
+        "pattern": "\\blead\\s+(?:high|contamination|content|poisoning)\\b|\\b(?:high\\s+content|contamination)\\s+of\\s+lead\\b|\\bheavy\\s+metals?\\b|\\bmercury\\b|\\bcadmium\\b|\\barsenic\\b",
+        "description": "heavy metal"
+      },
+      {
+        "pattern": "\\bcannabidiol\\b|\\bcbd\\b",
+        "description": "cannabidiol"
+      },
+      {
+        "pattern": "\\bchemical\\s+hazard\\b|\\bchemical\\s+contamination\\b",
+        "description": "chemical hazard"
+      },
+      {
+        "pattern": "\\bunauthori[sz]ed\\s+(?:feed\\s+)?additives?\\b|\\bnon[- ]?approved\\s+(?:feed\\s+)?additives?\\b",
+        "description": "unauthorized feed additive"
+      },
+      {
+        "pattern": "\\bfeed\\s+additives?\\b",
+        "description": "feed additive"
+      },
+      {
+        "pattern": "\\bdrug\\s+residue\\b|\\bresidue\\b",
+        "description": "residue"
+      }
+    ],
+    "NUTRITIONAL_IMBALANCE_OR_TOXICITY": [
+      {
+        "pattern": "\\bvitamin\\s+d3?\\b|\\bvit\\.?\\s*d3?\\b",
+        "description": "vitamin D"
+      },
+      {
+        "pattern": "\\bvitamin\\s+a\\b|\\bvit\\.?\\s*a\\b",
+        "description": "vitamin A"
+      },
+      {
+        "pattern": "\\bthiamine\\b|\\bvitamin\\s+b1\\b|\\bvit\\.?\\s*b1\\b",
+        "description": "thiamine / vitamin B1"
+      },
+      {
+        "pattern": "\\bvitamin\\s+k1\\b|\\bvit\\.?\\s*k1\\b",
+        "description": "vitamin K1"
+      },
+      {
+        "pattern": "\\bzinc\\b|\\bcopper\\b|\\biron\\b|\\bcalcium\\b|\\bphosphorus\\b|\\bcobalt\\b",
+        "description": "mineral/nutrient"
+      },
+      {
+        "pattern": "\\belevated\\s+levels?\\s+of\\s+vitamin\\b|\\bhigh\\s+content\\s+of\\s+vitamin\\b",
+        "description": "elevated vitamin level"
+      },
+      {
+        "pattern": "\\btoo\\s+high\\s+content\\s+of\\s+vitamin\\b|\\bexceeding\\s+amount\\s+of\\s+vitamin\\b",
+        "description": "excess vitamin level"
+      },
+      {
+        "pattern": "\\blow\\s+levels?\\s+of\\s+thiamine\\b|\\binsufficient\\s+thiamine\\b|\\bdeficien(?:t|cy)\\b",
+        "description": "nutrient deficiency"
+      }
+    ],
+    "FOREIGN_MATERIAL_CONTAMINATION": [
+      {
+        "pattern": "\\bforeign\\s+(?:material|body|object|bodies)\\b",
+        "description": "foreign material/body"
+      },
+      {
+        "pattern": "\\bsharp\\s+pieces?\\b",
+        "description": "sharp pieces"
+      },
+      {
+        "pattern": "\\bmetal\\s+(?:objects?|pieces?|fragments?|particles?)\\b|\\bpieces?\\s+of\\s+metal\\b|\\bloose\\s+metal\\b",
+        "description": "metal object/piece"
+      },
+      {
+        "pattern": "\\bfragments?\\s+metal\\b",
+        "description": "metal fragments"
+      },
+      {
+        "pattern": "\\bplastic\\s+(?:pieces?|fragments?)\\b|\\bplastic\\s+contamination\\b",
+        "description": "plastic piece/contamination"
+      },
+      {
+        "pattern": "\\bglass\\s+(?:pieces?|fragments?)\\b",
+        "description": "glass piece/fragment"
+      },
+      {
+        "pattern": "\\bporcelain\\s+pieces?\\b",
+        "description": "porcelain pieces"
+      },
+      {
+        "pattern": "\\bbone\\s+(?:pieces?|fragments?)\\b|\\blarge\\s+pieces?\\s+of\\s+bone\\b",
+        "description": "bone pieces/fragments"
+      },
+      {
+        "pattern": "\\bsharp\\s+foreign\\s+body\\b",
+        "description": "sharp foreign body"
+      }
+    ],
+    "LABELING_OR_UNDECLARED_INGREDIENT_ISSUE": [
+      {
+        "pattern": "\\bundeclared\\b|\\bnot\\s+declared\\b|\\bfails?\\s+to\\s+declare\\b",
+        "description": "undeclared ingredient/allergen"
+      },
+      {
+        "pattern": "\\ballergen\\b|\\ballergy\\b|\\ballergic\\b",
+        "description": "allergen"
+      },
+      {
+        "pattern": "\\bmislabell?ed\\b|\\blabell?ing\\s+error\\b|\\bincorrect\\s+label\\b",
+        "description": "labeling error"
+      },
+      {
+        "pattern": "\\bno\\s+labell?ing\\b|\\bwithout\\s+warning\\s+(?:on|for)\\s+.*label\\b",
+        "description": "missing label/warning"
+      },
+      {
+        "pattern": "\\blabel\\b.*\\bwarning\\b|\\bwarning\\b.*\\blabel\\b",
+        "description": "label warning issue"
+      }
+    ],
+    "QUALITY_OR_PROCESS_CONTROL_ISSUE": [
+      {
+        "pattern": "\\binsanitary\\b|\\binsanitary\\s+conditions\\b",
+        "description": "insanitary condition"
+      },
+      {
+        "pattern": "\\bstorage\\s+process\\b|\\bstorage\\s+conditions\\b",
+        "description": "storage process issue"
+      },
+      {
+        "pattern": "\\bdefective\\s+closure\\b|\\bpackaging\\s+failure\\b|\\bpackaging\\s+defect\\b",
+        "description": "packaging/closure defect"
+      },
+      {
+        "pattern": "\\bprocess\\s+deviation\\b|\\bmanufacturing\\s+defect\\b|\\bgmp\\b",
+        "description": "manufacturing/process issue"
+      },
+      {
+        "pattern": "\\bofficial\\s+controls?\\b|\\bnot\\s+subjected\\s+to\\s+official\\s+controls?\\b",
+        "description": "official controls issue"
+      },
+      {
+        "pattern": "\\bveterinar\\w*\\s+checks?\\b|\\bveterinair\\w*\\s+checks?\\b|\\bnecessary\\s+veterinar\\w*\\s+checks?\\b|\\bnecessary\\s+veterinair\\w*\\s+checks?\\b",
+        "description": "veterinary checks issue"
+      },
+      {
+        "pattern": "\\binsufficient\\s+checks?\\b|\\bskipped\\s+.*checks?\\b",
+        "description": "insufficient checks"
+      },
+      {
+        "pattern": "\\bunfavo[u]?rable\\s+(?:documentary|identity)\\s+check\\b|\\bdocumentary\\s+check\\b|\\bidentity\\s+check\\b",
+        "description": "documentary/identity check"
+      },
+      {
+        "pattern": "\\billegal\\s+import\\b|\\bunauthori[sz]ed\\s+import\\b",
+        "description": "illegal/unauthorized import"
+      },
+      {
+        "pattern": "\\bnot\\s+inspected\\b|\\babsence\\s+of\\s+inspection\\b",
+        "description": "inspection failure"
+      },
+      {
+        "pattern": "\\bhygiene\\s+failure\\b|\\bdocument\\s+failure\\b",
+        "description": "hygiene/document failure"
+      }
+    ]
+  },
+  "vague_uncertain_patterns": [
+    "\\bpossible\\s+contamination\\b",
+    "\\bpotential\\s+contamination\\b",
+    "\\bpotentially\\s+contaminated\\b",
+    "\\bmay\\s+be\\s+contaminated\\b",
+    "\\bquality\\s+issue\\b",
+    "\\bout\\s+of\\s+an\\s+abundance\\s+of\\s+caution\\b",
+    "\\bconsumer\\s+complaint\\b"
+  ],
+  "ambiguous_notification_patterns": [
+    "\\balert\\s+notification\\s+serious\\b",
+    "\\binformation\\s+notification\\s+for\\s+(?:follow-up|attention)\\b",
+    "\\bborder\\s+rejection\\s+notification\\b",
+    "\\bnot\\s+serious\\b",
+    "\\bundecided\\b"
+  ],
+  "constraints": [
+    "No manual annotation in code",
+    "No training",
+    "No embeddings",
+    "No train/validation/test split",
+    "No synthetic data",
+    "filtered_recalls.csv not overwritten"
+  ]
+}

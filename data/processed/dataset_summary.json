@@ -1,0 +1,96 @@
+{
+  "dataset_build_timestamp": "2026-05-03T16:49:40Z",
+  "phase": "Phase 5.1 — Split Quality Improvement",
+  "input_file": "data/interim/consolidated_labeled_recalls.csv",
+  "consolidated_label_summary_input": "data/interim/consolidated_label_summary.json",
+  "uncertain_rows_excluded": true,
+  "label_columns": [
+    "PATHOGEN_CONTAMINATION",
+    "CHEMICAL_OR_NUTRITIONAL_RISK",
+    "PHYSICAL_OR_QUALITY_ISSUE"
+  ],
+  "text_template": "Brand: {brand_names}. Product: {product_description}. Recall reason: {recall_reason_description}.",
+  "split_strategy": {
+    "preferred_split": "70/15/15",
+    "train_fraction": 0.7,
+    "validation_fraction": 0.15,
+    "test_fraction": 0.15,
+    "seed": 557,
+    "requirement": "Every final label has at least one positive example in each split; prefer at least two positives for every final label in validation and test.",
+    "selection": {
+      "eval_min_positive_count": 4,
+      "eval_total_positives": 32,
+      "train_min_positive_count": 12,
+      "label_balance_deviation": 8.15534,
+      "searched_seed_start": 0,
+      "searched_seed_count": 1000,
+      "searched_seed_end": 999,
+      "satisfying_seed_count": 606,
+      "minimum_positive_constraint": "At least 2 positives for every final label in both validation and test.",
+      "minimum_positive_constraint_satisfied": true,
+      "selection_reason": "Selected the satisfying seed with the best label-balance score."
+    }
+  },
+  "source_phase_4_5_summary": {
+    "final_labeled_rows": 103,
+    "uncertain_rows": 14,
+    "positive_count_per_final_label": {
+      "PATHOGEN_CONTAMINATION": 60,
+      "CHEMICAL_OR_NUTRITIONAL_RISK": 20,
+      "PHYSICAL_OR_QUALITY_ISSUE": 26
+    }
+  },
+  "full_dataset": {
+    "rows": 103,
+    "positive_count_per_label": {
+      "PATHOGEN_CONTAMINATION": 60,
+      "CHEMICAL_OR_NUTRITIONAL_RISK": 20,
+      "PHYSICAL_OR_QUALITY_ISSUE": 26
+    },
+    "rows_with_multiple_labels": 3
+  },
+  "splits": {
+    "train": {
+      "rows": 73,
+      "positive_count_per_label": {
+        "PATHOGEN_CONTAMINATION": 44,
+        "CHEMICAL_OR_NUTRITIONAL_RISK": 12,
+        "PHYSICAL_OR_QUALITY_ISSUE": 18
+      },
+      "rows_with_multiple_labels": 1
+    },
+    "validation": {
+      "rows": 15,
+      "positive_count_per_label": {
+        "PATHOGEN_CONTAMINATION": 8,
+        "CHEMICAL_OR_NUTRITIONAL_RISK": 4,
+        "PHYSICAL_OR_QUALITY_ISSUE": 4
+      },
+      "rows_with_multiple_labels": 1
+    },
+    "test": {
+      "rows": 15,
+      "positive_count_per_label": {
+        "PATHOGEN_CONTAMINATION": 8,
+        "CHEMICAL_OR_NUTRITIONAL_RISK": 4,
+        "PHYSICAL_OR_QUALITY_ISSUE": 4
+      },
+      "rows_with_multiple_labels": 1
+    }
+  },
+  "output_files": {
+    "full_dataset": "data/processed/full_dataset.csv",
+    "train": "data/processed/train.csv",
+    "validation": "data/processed/validation.csv",
+    "test": "data/processed/test.csv",
+    "label_columns": "data/processed/label_columns.json",
+    "dataset_summary": "data/processed/dataset_summary.json"
+  },
+  "constraints": [
+    "No embeddings",
+    "No model training",
+    "No evaluation",
+    "No synthetic data",
+    "Interim files not overwritten"
+  ]
+}

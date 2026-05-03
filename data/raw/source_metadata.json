@@ -1,0 +1,162 @@
+{
+  "fda_cvm": {
+    "source_name": "FDA CVM — Animal & Veterinary Recalls / Withdrawals",
+    "source_url": "https://www.fda.gov/animal-veterinary/safety-health/recalls-withdrawals",
+    "retrieval_timestamp": "2026-05-03T10:00:00Z",
+    "row_count": 49,
+    "column_names": [
+      "Date",
+      "Brand-Names",
+      "Product-Description",
+      "Recall-Reason-Description",
+      "Company-Name",
+      "Terminated-Recall"
+    ],
+    "collection_method": "Direct HTTP GET of published XLSX export (browser User-Agent required)",
+    "saved_files": [
+      "fda_animal_veterinary_recalls.xlsx",
+      "fda_animal_veterinary_recalls.csv"
+    ]
+  },
+  "datagov_legacy": {
+    "source_name": "Data.gov / FDA Pet Food Recalls XLS (2009, legacy)",
+    "source_url": "https://catalog.data.gov/dataset/fda-pet-food-recalls",
+    "download_url": "https://www.accessdata.fda.gov/scripts/newpetfoodrecalls/PetFoodRecallProductsList2009.xls",
+    "retrieval_timestamp": "2026-05-03T10:00:00Z",
+    "status": "unavailable",
+    "error": "404 Not Found",
+    "note": "The accessdata.fda.gov XLS link found on Data.gov returns 404 as of 2026."
+  },
+  "openfda_enforcement": {
+    "source_name": "openFDA Food Enforcement API — multi-keyword pet food query",
+    "source_url": "https://api.fda.gov/food/enforcement.json",
+    "retrieval_timestamp": "2026-05-03T10:00:00Z",
+    "row_count": 107,
+    "queries_used": [
+      "product_description:dog",
+      "product_description:cat",
+      "product_description:pet",
+      "product_description:treat",
+      "product_description:chew",
+      "product_description:puppy",
+      "product_description:kitten"
+    ],
+    "deduplication_key": [
+      "event_id",
+      "recall_number"
+    ],
+    "collection_method": "Paginated GET per keyword (100/page, max 500/term); deduplicated by event_id/recall_number",
+    "saved_files": [
+      "openfda_pet_food_enforcement_raw.csv"
+    ],
+    "note": "Broad keyword queries capture human food records. Scope filtering in Phase 2."
+  },
+  "uk_fsa": {
+    "source_name": "UK Food Standards Agency — Food Alerts (Linked Data API)",
+    "source_url": "https://data.food.gov.uk/food-alerts/id",
+    "api_url": "https://data.food.gov.uk/food-alerts/id.json?_limit=10000",
+    "licence": "OGL v3 — http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "retrieval_timestamp": "2026-05-03T10:00:00Z",
+    "row_count": 1314,
+    "collection_method": "Single HTTP GET to FSA Linked Data API with _limit=10000. Nested fields serialised as pipe-separated strings.",
+    "saved_files": [
+      "uk_fsa_food_alerts_raw.csv"
+    ],
+    "note": "Covers all FSA product alerts including human food, pet food, and feed. Scope filtering applied in Phase 2."
+  },
+  "eu_rasff": {
+    "source_name": "EU RASFF (Rapid Alert System for Food and Feed)",
+    "source_url": "https://webgate.ec.europa.eu/rasff-window/screen/search",
+    "retrieval_timestamp": "2026-05-03T10:00:00Z",
+    "status": "access_restricted",
+    "access_finding": "RASFF portal is an Angular SPA. Backend API endpoints return the Angular shell HTML for unauthenticated requests — EU Login (iRASFF) is required.",
+    "access_method_required": "EU Login (iRASFF system)",
+    "note": "RASFF covers all 27 EU member states plus EEA/UK/Switzerland."
+  },
+  "eu_rasff_manual": {
+    "source_name": "EU RASFF Manual Export (pet food category)",
+    "source_url": "https://webgate.ec.europa.eu/rasff-window/screen/search",
+    "retrieval_timestamp": "2026-05-03T10:00:00Z",
+    "row_count": 60,
+    "date_range": "2019-06-17 to 2026-04-02",
+    "filter_applied": "category=pet food, type=feed",
+    "saved_files": [
+      "eu_rasff_pet_food_raw.csv"
+    ],
+    "note": "Manually exported from RASFF consumer portal (no auth required for manual export)."
+  },
+  "german_bvl": {
+    "source_name": "German BVL (Bundesamt für Verbraucherschutz und Lebensmittelsicherheit)",
+    "source_url": "https://www.bvl.bund.de",
+    "retrieval_timestamp": "2026-05-03T10:00:00Z",
+    "status": "no_public_api",
+    "access_finding": "No structured public API or bulk CSV/JSON download found. Session-based redirects (HTTP 303) for direct file access.",
+    "note": "Alert summaries are available as HTML pages only."
+  },
+  "french_anses": {
+    "source_name": "French ANSES (Agence nationale de sécurité sanitaire)",
+    "source_url": "https://www.anses.fr/fr/content/les-alertes-alimentaires",
+    "retrieval_timestamp": "2026-05-03T10:00:00Z",
+    "status": "no_public_api",
+    "access_finding": "No structured public bulk-download API found. Alerts published as HTML/PDF press releases only.",
+    "note": "Alerts are published as HTML/PDF press releases only."
+  },
+  "canada_cfia": {
+    "source_name": "Canada Health Canada / CFIA Recalls and Safety Alerts JSON",
+    "source_url": "https://recalls-rappels.canada.ca/en",
+    "download_url": "https://recalls-rappels.canada.ca/sites/default/files/opendata-donneesouvertes/HCRSAMOpenData.json",
+    "licence": "Open Government Licence - Canada v2.0 — https://open.canada.ca/en/open-government-licence-canada",
+    "retrieval_timestamp": "2026-05-03T15:56:55Z",
+    "total_records_in_json": 33473,
+    "row_count": 10315,
+    "column_names": [
+      "NID",
+      "Title",
+      "URL",
+      "Organization",
+      "Product",
+      "Issue",
+      "What you should do",
+      "Category",
+      "Recall class",
+      "Last updated",
+      "Archived"
+    ],
+    "organizations_included": [
+      "CFIA",
+      "Consumer product safety"
+    ],
+    "organizations_excluded": "TC (transport), Medical devices, Drugs and health products, Marketed health products, Controlled substances and cannabis, HC",
+    "collection_method": "Single HTTP GET of static daily-updated JSON file; filtered to Organization in {CFIA, Consumer product safety}; no authentication required.",
+    "saved_files": [
+      "canada_cfia_recalls_raw.csv"
+    ],
+    "note": "CFIA = Canadian Food Inspection Agency (food, feed, plant safety). 'Consumer product safety' = Health Canada branch handling non-food consumer recalls including pet food.  Scope filtering to pet-food-only records in Phase 2."
+  },
+  "australia_fsanz": {
+    "source_name": "Australia FSANZ — Food Standards Australia New Zealand Food Recalls",
+    "source_url": "https://www.foodstandards.gov.au/food-recalls",
+    "retrieval_timestamp": "2026-05-03T15:56:57Z",
+    "status": "insufficient_data",
+    "access_finding": "RSS feed (https://www.foodstandards.gov.au/food-recalls-rss.xml) confirmed accessible but contains only the 10 most-recent recalls — insufficient for historical analysis.  Drupal JSON:API endpoint returns HTTP 404 (disabled).  Full listing page shows the same 3 most-recent items.  No bulk CSV/JSON export endpoint found.",
+    "note": "FSANZ oversees food safety standards for both Australia and New Zealand.  A historical bulk export would be valuable but is not publicly available. RSS feed URL documented for future manual checking.",
+    "rss_url": "https://www.foodstandards.gov.au/food-recalls-rss.xml"
+  },
+  "new_zealand_mpi": {
+    "source_name": "New Zealand MPI — Ministry for Primary Industries Food Recalls",
+    "source_url": "https://www.mpi.govt.nz/food-safety-home/food-recalls-and-complaints/",
+    "acvm_url": "https://www.mpi.govt.nz/agriculture/agricultural-compounds-vet-medicines/acvm-non-compliance-and-recalls/acvm-recalls",
+    "retrieval_timestamp": "2026-05-03T15:56:57Z",
+    "status": "bot_protected",
+    "access_finding": "All HTTP requests to mpi.govt.nz return an Incapsula bot-protection challenge (HTML iframe with NOINDEX/NOFOLLOW meta, incident ID in response).  The ACVM recalls page (agricultural compounds, vet medicines, pet food, animal feed) is similarly inaccessible without a full browser session.",
+    "note": "NZ MPI / ACVM would be a good source for pet food and animal feed recalls in New Zealand.  Data can only be accessed via a real browser session.  Future work could use a headless browser or manual export."
+  },
+  "australia_accc": {
+    "source_name": "Australia ACCC — Product Safety Recalls",
+    "source_url": "https://www.productsafety.gov.au/recalls",
+    "retrieval_timestamp": "2026-05-03T15:56:57Z",
+    "status": "no_public_api",
+    "access_finding": "ACCC Product Safety (https://www.productsafety.gov.au/recalls) is a Drupal site.  JSON:API endpoint returns HTTP 404 (disabled).  Search page returns HTML only with no embedded structured data.  No public JSON/CSV bulk export endpoint found.",
+    "note": "Recalls are browsable via the web search interface but not programmatically exportable."
+  }
+}

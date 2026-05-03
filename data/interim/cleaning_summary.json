@@ -1,0 +1,104 @@
+{
+  "cleaning_timestamp": "2026-05-03T16:17:57Z",
+  "phase": "Phase 3 — Cleaning and Scope Filtering",
+  "source_expansion_closed": true,
+  "phase26_counts_reference": "data/interim/source_candidate_counts.csv",
+  "scope_filter": {
+    "include_terms": [
+      "pet food",
+      "pet feed",
+      "dog food",
+      "cat food",
+      "pet treat",
+      "dog treat",
+      "cat treat",
+      "pet chew",
+      "dog chew",
+      "cat chew",
+      "raw pet food",
+      "food for dogs",
+      "food for cats",
+      "feed for dogs",
+      "feed for cats"
+    ],
+    "exclude_false_positive_terms": [
+      "hot dog",
+      "hotdog",
+      "corn dog",
+      "dogfish"
+    ],
+    "method": "case-insensitive substring match on source-specific text fields"
+  },
+  "deduplication": {
+    "method": "conservative exact deduplication by source + source_id when available; otherwise normalized product_description + recall_reason_description + date",
+    "duplicates_removed": 0,
+    "duplicate_examples": []
+  },
+  "columns": [
+    "source",
+    "source_id",
+    "date",
+    "brand_names",
+    "product_description",
+    "recall_reason_description",
+    "source_url",
+    "raw_title",
+    "raw_category",
+    "raw_issue_or_hazard",
+    "raw_text",
+    "scope_match",
+    "dedup_key"
+  ],
+  "by_source": {
+    "FDA CVM Animal & Veterinary Recalls": {
+      "raw_rows": 49,
+      "strict_candidates_before_dedup": 19,
+      "rows_after_dedup": 19,
+      "rejected_scope_rows": 30,
+      "duplicate_rows_removed": 0
+    },
+    "EU RASFF Manual Export": {
+      "raw_rows": 60,
+      "strict_candidates_before_dedup": 60,
+      "rows_after_dedup": 60,
+      "rejected_scope_rows": 0,
+      "duplicate_rows_removed": 0
+    },
+    "UK Food Standards Agency Food Alerts": {
+      "raw_rows": 1314,
+      "strict_candidates_before_dedup": 24,
+      "rows_after_dedup": 24,
+      "rejected_scope_rows": 1290,
+      "duplicate_rows_removed": 0
+    },
+    "openFDA Food Enforcement API (multi-keyword)": {
+      "raw_rows": 107,
+      "strict_candidates_before_dedup": 1,
+      "rows_after_dedup": 1,
+      "rejected_scope_rows": 106,
+      "duplicate_rows_removed": 0
+    },
+    "Canada CFIA + Consumer Product Safety recalls": {
+      "raw_rows": 10315,
+      "strict_candidates_before_dedup": 13,
+      "rows_after_dedup": 13,
+      "rejected_scope_rows": 10302,
+      "duplicate_rows_removed": 0
+    }
+  },
+  "totals": {
+    "raw_rows": 11845,
+    "strict_candidates_before_dedup": 117,
+    "rows_after_dedup": 117,
+    "rejected_scope_rows": 11728,
+    "duplicate_rows_removed": 0
+  },
+  "constraints": [
+    "No label mapping",
+    "No manual annotation",
+    "No model code",
+    "No synthetic data",
+    "No train/validation/test split",
+    "Raw files not modified"
+  ]
+}

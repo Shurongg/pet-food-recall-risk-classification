@@ -1,0 +1,848 @@
+{
+  "inspection_timestamp": "2026-05-03T16:11:08Z",
+  "sources": {
+    "fda_cvm": {
+      "source": "FDA CVM Animal & Veterinary Recalls",
+      "file": "fda_animal_veterinary_recalls.csv",
+      "total_rows": 49,
+      "candidate_count": 24,
+      "excluded_count": 14,
+      "borderline_count": 11,
+      "candidate_method": "broad companion-animal filter (FDA CVM is already animal/vet scoped)",
+      "missing_values": {
+        "Product-Description": {
+          "missing": 0,
+          "present": 49,
+          "pct_missing": 0.0
+        },
+        "Recall-Reason-Description": {
+          "missing": 0,
+          "present": 49,
+          "pct_missing": 0.0
+        },
+        "Brand-Names": {
+          "missing": 0,
+          "present": 49,
+          "pct_missing": 0.0
+        },
+        "Date": {
+          "missing": 0,
+          "present": 49,
+          "pct_missing": 0.0
+        },
+        "Terminated-Recall": {
+          "missing": 36,
+          "present": 13,
+          "pct_missing": 73.5
+        }
+      },
+      "candidate_examples": [
+        {
+          "Product-Description": "Kitten Grind, Kitten Mix, and Puppy Mix",
+          "Recall-Reason-Description": "Potential contamination of Salmonella and Listeria monocytogenes",
+          "Brand-Names": "Blue Ridge Beef",
+          "Date": "01/03/2024",
+          "Terminated-Recall": ""
+        },
+        {
+          "Product-Description": "Raw dog and cat food",
+          "Recall-Reason-Description": "Listeria monocytogenes",
+          "Brand-Names": "Viva",
+          "Date": "07/01/2024",
+          "Terminated-Recall": ""
+        },
+        {
+          "Product-Description": "Canned Dog Food",
+          "Recall-Reason-Description": "Potentially Elevated Levels of Vitamin D",
+          "Brand-Names": "Hill's Science Diet",
+          "Date": "01/31/2019",
+          "Terminated-Recall": "Terminated"
+        },
+        {
+          "Product-Description": "Raw frozen pet food",
+          "Recall-Reason-Description": "Potential to be contaminated with Salmonella and Listeria monocytogenes",
+          "Brand-Names": "Texas Tripe",
+          "Date": "08/15/2019",
+          "Terminated-Recall": ""
+        },
+        {
+          "Product-Description": "Canned Dog Food",
+          "Recall-Reason-Description": "Potentially Elevated Levels of Vitamin D",
+          "Brand-Names": "Hill’s",
+          "Date": "05/21/2019",
+          "Terminated-Recall": ""
+        },
+        {
+          "Product-Description": "Beef and Chicken Dog Foods",
+          "Recall-Reason-Description": "Due to Potential Salmonella and Listeria",
+          "Brand-Names": "ANSWERS",
+          "Date": "09/23/2024",
+          "Terminated-Recall": ""
+        },
+        {
+          "Product-Description": "Carolina Made Chicken Chips Dog Treats",
+          "Recall-Reason-Description": "Potentially contaminated with Salmonella",
+          "Brand-Names": "Hollywood Feed",
+          "Date": "11/23/2024",
+          "Terminated-Recall": ""
+        },
+        {
+          "Product-Description": "Chicken Chips Dog Treats",
+          "Recall-Reason-Description": "Potential Salmonella Contamination",
+          "Brand-Names": "Gaines Family Farmstead",
+          "Date": "11/22/2024",
+          "Terminated-Recall": ""
+        },
+        {
+          "Product-Description": "Puppy Mix",
+          "Recall-Reason-Description": "Potential Foodborne Illness - Salmonella",
+          "Brand-Names": "Blue Ridge Beef",
+          "Date": "12/04/2024",
+          "Terminated-Recall": ""
+        },
+        {
+          "Product-Description": "Kitten mix pet food",
+          "Recall-Reason-Description": "Potential to be contaminated with Salmonella",
+          "Brand-Names": "Blue Ridge Beef",
+          "Date": "01/03/2025",
+          "Terminated-Recall": ""
+        }
+      ],
+      "rejected_examples": [
+        {
+          "Product-Description": "Wild Bird Food Birders’ Blend",
+          "_scope_reason": "excluded: 'bird food'"
+        },
+        {
+          "Product-Description": "Parrot Food",
+          "_scope_reason": "excluded: 'parrot'"
+        },
+        {
+          "Product-Description": "Liquid Probiotics for adults and toddlers; Probiotics for cats, dogs, swine, and equine",
+          "_scope_reason": "excluded: 'swine'"
+        },
+        {
+          "Product-Description": "Chicken Feed, Swine Feed, Cattle Feed, Horse Feed",
+          "_scope_reason": "excluded: 'chicken feed'"
+        },
+        {
+          "Product-Description": "Chicken, Swine and Rabbit Feed Products",
+          "_scope_reason": "excluded: 'swine'"
+        },
+        {
+          "Product-Description": "Buprenorphine Hydrochloride Injection Carpuject Units and Labetalol Hydrochloride Injection, USP Carpuject Units",
+          "_scope_reason": "excluded: 'injection'"
+        },
+        {
+          "Product-Description": "Docetaxel Injection, USP",
+          "_scope_reason": "excluded: 'injection'"
+        },
+        {
+          "Product-Description": "ReptoMin 3-In-1 SELECT-A-FOOD reptile food",
+          "_scope_reason": "excluded: 'reptile'"
+        },
+        {
+          "Product-Description": "Dexmedetomidine Hydrochloride Injection 0.5 mg/mL",
+          "_scope_reason": "excluded: 'injection'"
+        },
+        {
+          "Product-Description": "Nutrena® Country Feeds® Cracked Corn for livestock, 50 lb. bag",
+          "_scope_reason": "excluded: 'equine'"
+        }
+      ],
+      "notes": "24 rows match companion-animal terms (dog/cat/pet/puppy/kitten). 14 rows clearly excluded (livestock, birds, medicines). 11 rows borderline (pig ears, hedgehog food, etc.) — will be reviewed manually in Phase 3."
+    },
+    "rasff": {
+      "source": "EU RASFF Manual Export",
+      "file": "eu_rasff_pet_food_raw.csv",
+      "total_rows": 60,
+      "candidate_count": 60,
+      "excluded_count": 0,
+      "borderline_count": 0,
+      "candidate_method": "all rows in scope — source pre-filtered to category=pet food",
+      "classification_breakdown": {
+        "alert notification": 13,
+        "information notification for follow-up": 31,
+        "border rejection notification": 7,
+        "information notification for attention": 9
+      },
+      "missing_values": {
+        "subject": {
+          "missing": 0,
+          "present": 60,
+          "pct_missing": 0.0
+        },
+        "hazards": {
+          "missing": 26,
+          "present": 34,
+          "pct_missing": 43.3
+        },
+        "classification": {
+          "missing": 0,
+          "present": 60,
+          "pct_missing": 0.0
+        },
+        "notifying_country": {
+          "missing": 0,
+          "present": 60,
+          "pct_missing": 0.0
+        },
+        "reference": {
+          "missing": 0,
+          "present": 60,
+          "pct_missing": 0.0
+        },
+        "date": {
+          "missing": 0,
+          "present": 60,
+          "pct_missing": 0.0
+        },
+        "risk_decision": {
+          "missing": 0,
+          "present": 60,
+          "pct_missing": 0.0
+        },
+        "origin": {
+          "missing": 0,
+          "present": 60,
+          "pct_missing": 0.0
+        }
+      },
+      "candidate_examples": [
+        {
+          "reference": "2026.2824",
+          "subject": "Pathogenic microorganisms in pet food from the Czech Republic",
+          "date": "02-04-2026 12:14:15",
+          "classification": "alert notification",
+          "risk_decision": "serious",
+          "hazards": "Escherichia coli  high count - {pathogenic micro-organisms},Listeria monocytogenes  - {pathogenic micro-organisms},Listeria spp  - {pathogenic micro-organisms},Salmonella spp.  - {pathogenic micro-organisms}",
+          "notifying_country": "Slovakia",
+          "origin": "Czechia"
+        },
+        {
+          "reference": "2026.2806",
+          "subject": "Illegal import of Pet food from India",
+          "date": "01-04-2026 16:55:00",
+          "classification": "information notification for follow-up",
+          "risk_decision": "not serious",
+          "hazards": "",
+          "notifying_country": "Germany",
+          "origin": "India"
+        },
+        {
+          "reference": "2026.2380",
+          "subject": "Unfavorable documentary check on pet food from Thailand",
+          "date": "20-03-2026 11:02:22",
+          "classification": "border rejection notification",
+          "risk_decision": "not serious",
+          "hazards": "",
+          "notifying_country": "Italy",
+          "origin": "Thailand"
+        },
+        {
+          "reference": "2026.2347",
+          "subject": "Unfavorable identity check for pet food health certificates from Thailand",
+          "date": "19-03-2026 15:30:10",
+          "classification": "border rejection notification",
+          "risk_decision": "not serious",
+          "hazards": "",
+          "notifying_country": "Italy",
+          "origin": "Thailand"
+        },
+        {
+          "reference": "2025.9632",
+          "subject": "Excessive number of Enterobacteriaceae in pet food from Poland and India",
+          "date": "02-12-2025 16:47:16",
+          "classification": "information notification for follow-up",
+          "risk_decision": "not serious",
+          "hazards": "Enterobacteriaceae  too high count - {non-pathogenic micro-organisms}",
+          "notifying_country": "Lithuania",
+          "origin": "India,Poland"
+        },
+        {
+          "reference": "2025.9122",
+          "subject": "Foreign body (pieces of metal) in duck meat cubes (pet food) for dogs and cats from the Netherlands",
+          "date": "19-11-2025 15:48:26",
+          "classification": "alert notification",
+          "risk_decision": "serious",
+          "hazards": "",
+          "notifying_country": "Germany",
+          "origin": "Netherlands"
+        },
+        {
+          "reference": "2025.7852",
+          "subject": "Foreign body (cigarette) in pet food from Czech Republic",
+          "date": "13-10-2025 16:07:34",
+          "classification": "information notification for follow-up",
+          "risk_decision": "potential risk",
+          "hazards": "",
+          "notifying_country": "Belgium",
+          "origin": "Czechia"
+        },
+        {
+          "reference": "2025.6353",
+          "subject": "Salmonella spp detected in pet food for cats produced in France",
+          "date": "20-08-2025 15:28:01",
+          "classification": "information notification for follow-up",
+          "risk_decision": "potentially serious",
+          "hazards": "Salmonella spp   - {pathogenic micro-organisms}",
+          "notifying_country": "Italy",
+          "origin": "France"
+        },
+        {
+          "reference": "2025.5191",
+          "subject": "Salmonella detected in pet food for dogs from Germany ",
+          "date": "08-07-2025 17:29:42",
+          "classification": "information notification for follow-up",
+          "risk_decision": "potential risk",
+          "hazards": "Salmonella   - {pathogenic micro-organisms}",
+          "notifying_country": "Denmark",
+          "origin": "Germany"
+        },
+        {
+          "reference": "2025.4934",
+          "subject": "High content of Enterobacteriaceae in raw Pet Food from Germany",
+          "date": "01-07-2025 11:43:51",
+          "classification": "information notification for attention",
+          "risk_decision": "potential risk",
+          "hazards": "Enterobacteriaceae  high count - {non-pathogenic micro-organisms}",
+          "notifying_country": "Croatia",
+          "origin": "Germany"
+        }
+      ],
+      "rejected_examples": [],
+      "notes": "All 60 rows have category='pet food'. Classification breakdown: {'alert notification': 13, 'information notification for follow-up': 31, 'border rejection notification': 7, 'information notification for attention': 9}. No exclusion needed; all rows pass to Phase 3 review."
+    },
+    "uk_fsa": {
+      "source": "UK Food Standards Agency Food Alerts",
+      "file": "uk_fsa_food_alerts_raw.csv",
+      "total_rows": 1314,
+      "candidate_count": 24,
+      "excluded_count": 1290,
+      "borderline_count": 0,
+      "candidate_method": "strict inclusion terms on title + productDetails",
+      "missing_values": {
+        "title": {
+          "missing": 0,
+          "present": 1314,
+          "pct_missing": 0.0
+        },
+        "productDetails": {
+          "missing": 4,
+          "present": 1310,
+          "pct_missing": 0.3
+        },
+        "problem": {
+          "missing": 0,
+          "present": 1314,
+          "pct_missing": 0.0
+        },
+        "notation": {
+          "missing": 0,
+          "present": 1314,
+          "pct_missing": 0.0
+        },
+        "created": {
+          "missing": 0,
+          "present": 1314,
+          "pct_missing": 0.0
+        },
+        "alertURL": {
+          "missing": 0,
+          "present": 1314,
+          "pct_missing": 0.0
+        },
+        "reportingBusiness": {
+          "missing": 59,
+          "present": 1255,
+          "pct_missing": 4.5
+        }
+      },
+      "candidate_examples": [
+        {
+          "notation": "FSA-PRIN-25-2018",
+          "title": "Sainsbury’s recalls a range of its pet food pouch selections due to high levels of Vitamin D",
+          "created": "2018-04-28",
+          "problem": "{'@id': 'http://data.food.gov.uk/food-alerts/id/FSA-PRIN-25-2018/problem/0', 'riskStatement': 'High levels of vitamin D fed to a pet over a short period (weeks/months) should not cause concern. Over a longer period of feeding with excessive levels of vitamin D, symptoms can vary, but may include lethargy, stiffness, vomiting, diarrhoea or excessive urination (polyuria).'}",
+          "alertURL": "https://www.food.gov.uk/news-alerts/alert/FSA-PRIN-25-2018"
+        },
+        {
+          "notation": "FSA-PRIN-57-2018",
+          "title": "The Raw Factory recalls various raw pet food products containing tripe and/or pork as they contain salmonella",
+          "created": "2018-11-16",
+          "problem": "{'@id': 'http://data.food.gov.uk/food-alerts/id/FSA-PRIN-57-2018/problem/0', 'riskStatement': 'The presence of salmonella in the products listed. Salmonella is a bacterium that can cause food poisoning in humans and animals. The product could therefore carry a potential risk, either through direct handling of the pet food, or indirectly for example from food bowls or utensils or contact with the faeces of infected animals. In humans, symptoms caused by salmonella usually include fever, diarrhoea and abdominal cramps.'}",
+          "alertURL": "https://www.food.gov.uk/news-alerts/alert/fsa-prin-57-2018"
+        },
+        {
+          "notation": "FSA-PRIN-65-2018",
+          "title": "Natural Instinct recalls Wild Venison (Natural Cat Food) as some of the ingredients were not inspected in line with EU requirements",
+          "created": "2018-12-11",
+          "problem": "{'@id': 'http://data.food.gov.uk/food-alerts/id/FSA-PRIN-65-2018/problem/0', 'riskStatement': 'Some of the ingredients were not inspected in line with EU requirements. The absence of inspection means the safety of the product cannot be confirmed and may therefore carry a potential risk.'}",
+          "alertURL": "https://www.food.gov.uk/news-alerts/alert/fsa-prin-65-2018"
+        },
+        {
+          "notation": "FSA-PRIN-71-2018",
+          "title": "Avondale Pet Foods Ltd recalls Just Natural Chicken & Tripe because salmonella has been found in the product",
+          "created": "2018-12-21",
+          "problem": "{'@id': 'http://data.food.gov.uk/food-alerts/id/FSA-PRIN-71-2018/problem/0', 'riskStatement': 'The presence of salmonella in the product listed above. Salmonella is a bacterium that can cause illness in humans and animals. The product could therefore carry a potential risk, because of the presence of salmonella, either through direct handling of the pet food, or indirectly, for example from pet feeding bowls, utensils or contact with the faeces of animals. In humans, symptoms caused by salmonella usually include fever, diarrhoea and abdominal cramps. Infected animals may not necessarily display signs of illness, but symptoms can include diarrhoea.'}",
+          "alertURL": "https://www.food.gov.uk/news-alerts/alert/fsa-prin-71-2018"
+        },
+        {
+          "notation": "FSA-PRIN-03-2019",
+          "title": "Hill’s Pet Nutrition recalls a range of its selected dog food because it may contain high levels of Vitamin D",
+          "created": "2019-02-01",
+          "problem": "{'@id': 'http://data.food.gov.uk/food-alerts/id/FSA-PRIN-03-2019/problem/0', 'riskStatement': 'High levels of vitamin D fed to a pet over a short period (weeks/months) should not cause concern. Over a longer period of feeding, ingestion of elevated levels can lead to potential health issues depending on the level of vitamin D and the length of exposure, and dogs may exhibit symptoms such as vomiting, loss of appetite, increased thirst, increased urination, excessive drooling, and weight loss. Vitamin D, when consumed at very high levels, can lead to serious health issues in dogs including renal dysfunction.'}",
+          "alertURL": "https://www.food.gov.uk/news-alerts/alert/fsa-prin-03-2019"
+        },
+        {
+          "notation": "FSA-PRIN-03-2019-update-1",
+          "title": "Hill’s Pet Nutrition extends its recall of selected canned dog food because it may contain high levels of vitamin D",
+          "created": "2019-03-22",
+          "problem": "{'@id': 'http://data.food.gov.uk/food-alerts/id/FSA-PRIN-03-2019-update-1/problem/0', 'riskStatement': 'High levels of vitamin D fed to a pet over a short period (weeks/months) should not cause concern. Over a longer period of feeding, ingestion of elevated levels can lead to potential health issues depending on the level of vitamin D and the length of exposure, and dogs may exhibit symptoms such as vomiting, loss of appetite, increased thirst, increased urination, excessive drooling, and weight loss. Vitamin D, when consumed at very high levels, can lead to serious health issues in dogs including renal dysfunction.'}",
+          "alertURL": "https://www.food.gov.uk/news-alerts/alert/fsa-prin-03-2019-update-1"
+        },
+        {
+          "notation": "FSA-PRIN-21-2019",
+          "title": "Birmingham Halal Abattoir (UK 4496) recalls meat and pet food products because they may be unsafe",
+          "created": "2019-05-17",
+          "problem": "{'@id': 'http://data.food.gov.uk/food-alerts/id/FSA-PRIN-21-2019/problem/0', 'riskStatement': 'Some of the products do not meet food and feed safety requirements and are therefore unsafe to eat or be fed to pets.'}",
+          "alertURL": "https://www.food.gov.uk/news-alerts/alert/fsa-prin-21-2019"
+        },
+        {
+          "notation": "FSA-PRIN-29-2019",
+          "title": "Homeland By Products Ltd recalls Frozen Raw Beef, Tripe and Turkey Pet Food due to the presence of salmonella",
+          "created": "2019-06-27",
+          "problem": "{'@id': 'http://data.food.gov.uk/food-alerts/id/FSA-PRIN-29-2019/problem/0', 'riskStatement': 'The presence of salmonella in the products listed above. Salmonella is a bacterium that can cause illness in humans and animals. The product could therefore carry a potential risk, because of the presence of salmonella, either through direct handling of the pet food, or indirectly, for example from pet feeding bowls, utensils or contact with the faeces of animals. In humans, symptoms caused by salmonella usually include fever, diarrhoea and abdominal cramps. Infected animals may not necessarily display signs of illness, but symptoms can include diarrhoea.'}",
+          "alertURL": "https://www.food.gov.uk/news-alerts/alert/fsa-prin-29-2019"
+        },
+        {
+          "notation": "FSA-PRIN-36-2019",
+          "title": "Raw Treat Pet Food Ltd recalls Frozen Raw Beef, Chicken, Lamb, and Chicken & Tripe Pet Food due to the presence of Listeria monocytogenes",
+          "created": "2019-07-30",
+          "problem": "{'@id': 'http://data.food.gov.uk/food-alerts/id/FSA-PRIN-36-2019/problem/0', 'riskStatement': 'The presence of Listeria monocytogenes in the products listed above. Listeria monocytogenes is a bacterium that can cause illness in humans and animals. The product could therefore carry a potential risk either through direct handling of the pet food, or indirectly, for example from pet feeding bowls, utensils or contact with the faeces of animals.\\nIn humans, symptoms caused by this organism can be similar to flu and include high temperature, muscle ache or pain, chills, feeling or being sick and diarrhoea. However, in rare cases, the infection can be more severe, causing serious complications, such as meningitis.\\nSome people are more vulnerable to listeria infections, including those over 65 years of age, pregnant women and their unborn babies, babies less than one month old and people with weakened immune systems.', 'pathogenRisk': {'@id': 'http://data.food.gov.uk/codes/alerts/def/pathogen-risk/listeria-contamination', 'label': ['Contamination of product with Listeria monocytogenes', 'Contamination of product with Listeria monocytogenes']}}",
+          "alertURL": "https://www.food.gov.uk/news-alerts/alert/fsa-prin-36-2019"
+        },
+        {
+          "notation": "FSA-PRIN-38-2019",
+          "title": "Raw Treat Pet Food Ltd recalls Varieties of Frozen Raw Pet Food due to the presence of Salmonella",
+          "created": "2019-08-13",
+          "problem": "{'@id': 'http://data.food.gov.uk/food-alerts/id/FSA-PRIN-38-2019/problem/0', 'riskStatement': 'The presence of Salmonella in the products listed above. Salmonella is a bacterium that can cause illness in humans and animals. The product could therefore carry a potential risk, because of the presence of Salmonella, either through direct handling of the pet food, or indirectly, for example from pet feeding bowls, utensils or contact with the faeces of animals. In humans, symptoms caused by Salmonella usually include fever, diarrhoea and abdominal cramps. Infected animals may not necessarily display signs of illness, but symptoms can include diarrhoea.', 'pathogenRisk': {'@id': 'http://data.food.gov.uk/codes/alerts/def/pathogen-risk/salmonella-contamination', 'label': ['Contamination of product with salmonella', 'Contamination of product with salmonella']}}",
+          "alertURL": "https://www.food.gov.uk/news-alerts/alert/fsa-prin-38-2019"
+        }
+      ],
+      "rejected_examples": [
+        {
+          "notation": "FSA-PRIN-01-2018",
+          "title": "James Hall recalls BBQ Pulled Pork because it may contain Salmonella"
+        },
+        {
+          "notation": "FSA-AA-03-2018",
+          "title": "Morrisons recalls Eat Smart COUNTED Honey & Mustard Dressing because of undeclared egg and mustard"
+        },
+        {
+          "notation": "FSA-AA-04-2018",
+          "title": "Marks & Spencer recalls 2 Gluten Free Scotch Eggs because of undeclared gluten"
+        },
+        {
+          "notation": "FSA-AA-06-2018",
+          "title": "Community Foods is recalling ‘Natural Days Ground Rice Flour’ because of undeclared milk"
+        },
+        {
+          "notation": "FSA-AA-07-2018",
+          "title": "Boots recalls ‘Delicious Pineapple and Berry Compote’ because of undeclared milk"
+        },
+        {
+          "notation": "FSA-AA-08-2018",
+          "title": "Optima Consumer Health Care recalls Glucosamine Tablets and Omega Choice 3-6-9 capsules due to incorrect allergen labelling"
+        },
+        {
+          "notation": "FSA-AA-02-2018",
+          "title": "New World Imports (UK) Ltd recalls Kam Yuen Crab Roe Flavour Sunflower Seeds because of undeclared peanut"
+        },
+        {
+          "notation": "FSA-AA-05-2018",
+          "title": "Wikinger UK recalls Wikinger Hot Dogs because of incorrect allergen labelling"
+        },
+        {
+          "notation": "FSA-AA-10-2018",
+          "title": "Avondale Foods Ltd recalls Country Kitchen Coleslaw & Potato Salad Twin-Pack because of undeclared milk"
+        },
+        {
+          "notation": "FSA-AA-09-2018",
+          "title": "Possible Presence of Gluten in Gluten Free Amaizin Organic Corn products"
+        }
+      ],
+      "notes": "24 of 1314 rows match strict pet-food inclusion terms. 1290 rows are human food or non-pet alerts (expected — source is unfiltered). Strict filter used because source contains mostly human food."
+    },
+    "openfda": {
+      "source": "openFDA Food Enforcement API (multi-keyword)",
+      "file": "openfda_pet_food_enforcement_raw.csv",
+      "total_rows": 107,
+      "candidate_count": 1,
+      "excluded_count": 106,
+      "borderline_count": 0,
+      "candidate_method": "strict inclusion terms on product_description + reason_for_recall",
+      "query_term_breakdown": {
+        "dog": 26,
+        "cat": 5,
+        "pet": 51,
+        "treat": 16,
+        "chew": 8,
+        "puppy": 1
+      },
+      "missing_values": {
+        "product_description": {
+          "missing": 0,
+          "present": 107,
+          "pct_missing": 0.0
+        },
+        "reason_for_recall": {
+          "missing": 0,
+          "present": 107,
+          "pct_missing": 0.0
+        },
+        "recalling_firm": {
+          "missing": 0,
+          "present": 107,
+          "pct_missing": 0.0
+        },
+        "recall_number": {
+          "missing": 0,
+          "present": 107,
+          "pct_missing": 0.0
+        },
+        "recall_initiation_date": {
+          "missing": 0,
+          "present": 107,
+          "pct_missing": 0.0
+        },
+        "product_type": {
+          "missing": 0,
+          "present": 107,
+          "pct_missing": 0.0
+        },
+        "_query_term": {
+          "missing": 0,
+          "present": 107,
+          "pct_missing": 0.0
+        }
+      },
+      "candidate_examples": [
+        {
+          "product_description": "Diced Carrots, Brand Northwest Growers Select, Net Wt 20 lb, UPC 20100  Organic Diced Carrots, Brand Northwest Growers Select, Net Wt 50 lb, UPC 4635800019  Shoestring Carrots, Brand Northwest Growers Select, Net Wt 20 lb, UPC 4635800027  Organic Diced Carrots, Brand Organic by Nature , Net Wt 50 lb, UPC 20191  Carrots, Brand Chef Maxwell, Net Wt 30 lb, UPC 635302-5004  Diced Carrots, Brand Farmer's Bounty, Net Wt 50 lb, UPC 4635800029  Slice Carrots, Brand Farmer's Bounty, Net Wt 30 lb, UPC 463580008  Diced Carrots, Brand The Inn, Net Wt 20 lb, UPC\t8628920742  Crinkle Cut Carrots, Brand Parade, Net Wt 16 oz, UP 5070030668  Crinkle Cut Carrots, Brand Safeway Kitchens, Net Wt 24 oz, UPC 2113009109  Crinkle Cut Carrots, Brand Signature Kitchens, Net Wt 16 oz, UPC 2113009945  Crinkle Cut Carrots, Brand Signature Kitchens, Net Wt 24 oz, UPC 2113009945    *******BULK containers***************    Organic Carrots, Brand Hain, Net Wt 1250 lb    Carrots, Brand MRB Foods Sources, Net Wt 50 lb    Organic Carrots, Brand Pacific Foods, Net Wt 50 lb  Organic Carrots, Brand Pacific Foods, Net Wt 1600 lb    Organic Carrots, Brand Primal Pet Food Inc, Net Wt 50 lb  Organic Carrots, Brand Primal Pet Food Inc, Net Wt 1500 lb",
+          "reason_for_recall": "Carrots are recalled because they have the potential to be contaminated with Listeria monocytogenes.",
+          "recalling_firm": "CRF Frozen Foods, LLC",
+          "recall_initiation_date": "20160502",
+          "_query_term": "pet"
+        }
+      ],
+      "rejected_examples": [
+        {
+          "product_description": "Pantry Essentials Hot Dog Buns;  8 buns; NET WT 12 oz 340 g  UPC 0 21130 27084 2;  Distributed for: Lucerne Foods Inc.  Pleasanton, CA 94566    Contains: Wheat  May Contain eggs, milk.",
+          "_query_term": "dog"
+        },
+        {
+          "product_description": "\"SUNDIAL***Traditional Herbal Products***TRADITIONAL ORGANIC HERBS***DOG BLOOD***1 oz.***USES: FIBROIDS, CYST, CLEANS WOMB, WOMAN IMBALANCE, PREVENT MISCARRIAGE***\"; packaged in clear plastic zip-top bag",
+          "_query_term": "dog"
+        },
+        {
+          "product_description": "HEB Bake Shop 8 Wheat Hot Dog Buns, Net Wt. 12 OZ, UPC: 041220191659",
+          "_query_term": "dog"
+        },
+        {
+          "product_description": "Hot Dog Buns  8 Count  Earthgrains Baking companies, Inc.  Horsham, PA 19044",
+          "_query_term": "dog"
+        },
+        {
+          "product_description": "Blazing Sausage Dog, Net Wt. 5.50 oz., UPC 7-01248-01065-2, MFG Code 1780",
+          "_query_term": "dog"
+        },
+        {
+          "product_description": "Integrated Food Service  Chicken Hot Dog   on a Whole Grain Bun  Code #941500",
+          "_query_term": "dog"
+        },
+        {
+          "product_description": "Fletcher's Corny Dog Mix NET WT 25 LB (11.33 kg)",
+          "_query_term": "dog"
+        },
+        {
+          "product_description": "Hot Dog Buns",
+          "_query_term": "dog"
+        },
+        {
+          "product_description": "Hot Dog Buns, 6 pieces packaged in a poly bag, net wt  17.3 oz.    The label is read in parts: \"***HOTDOG BUNS***NET WT. 17.3 OZ***Ingredients:***Enriched unbleached wheat flour***egg, whole milk (milk, vitamin A, vitamin D3), butter***Contains: wheat, egg, dairy***\".",
+          "_query_term": "dog"
+        },
+        {
+          "product_description": "MEAT AND POULTRY PRODUCTS    1. FRESH MKT  BEEF POT PIE   38OZ    \tUPC 7818508518\t\t38   OZ             \tBUDD FOODS INC          2. PUERINGER SLC PEPPERONI BULK 5LB\tUPC 3442921977\t\t    5LB             \tPERFORMANCE FOOD GRO    3. INNOVASIAN GEN TSO CHKN KIT\tUPC 69511940200\t4\t    4LB             \tINNOVASIAN CUISINE E    4. FONTANINI ITALIAN SAUSGE CKD 5 LB\tUPC\t3943721515\t\t5    LB             \tPERFORMANCE FOOD GRO    5. FONTANINI ITALIAN SAUSGE CKD 5 LB\tUPC\t3943721515\t\t5    LB             \tVISTAR/ VSA             6. FRONTERA GROUND BEEF SKILLET POUCH 8 OZ  \tUPC\t60418312170\t6\t8    OZ             \tCONAGRA FOODS SALES     7. GOURMET BOUTIQUE TERIYAKI CHICKEN 4 Z\tUPC\t70612900142\t\t4    OZ             \tGOURMET BOUTIQUE LLC    8. SWIFT SLICED BACON BULK    \tUPC\t4531085094\t\t15   LB             \tDOT FOODS INC           9. COUNTRY CHEF CHICKEN POT PIE 9.5 OZ      \tUPC\t3805800325\t\t9.5  OZ             \tCARANDO GOURMET FROZ    10. GOURMET BOUTIQUE CHICKEN POT PIE 15 OZ   \tUPC\t70612903376\t\t15   OZ             \tGOURMET BOUTIQUE LLC    11. GOURMET BOUTIQUE CHICKEN POT PIE 15 OZ   \tUPC\t70612903376\t\t15   OZ             \tGOURMET BOUTIQUE LLC    12. KLEMENTS BEEF CHICAGO HOT DOG 5 LB\tUPC\t7360807271\t\t    5LB             \tKLEMENT SAUSAGE CO      13. KLEMENTS BEEF CHICAGO HOT DOG 5 LB\tUPC\t7360807271\t\t    5LB             \tKLEMENT SAUSAGE CO      14. SMTHFIELD BACON BITS 5LB   \tUPC 7080014265\t\t5    LB             \tSMITHFIELD PACKAGED     15. FIELDALE BONELESS BREAST\tUPC\t1394171288\t\t40   LB             \tFIELDALE FARMS CORPO    15. FIELDALE BONELESS BREAST\tUPC 1394171288\t\t40   LB             \tFIELDALE FARMS CORPO    16. FIELDALE BONELESS THIGHS\tUPC\t1394171491\t\t   20LB             \tFIELDALE FARMS CORPO    17. FIELDALE BONELESS THIGHS\tUPC\t1394171491\t1\t   20LB             \tFIELDALE FARMS CORPO    18. FIELDALE SPLIT BREAST\tUPC\t1394171058\t1\t40   LB             \tFIELDALE FARMS CORPO    19. FIELDALE SPLIT BREAST\tUPC\t1394171058\t1\t40   LB             \tFIELDALE FARMS CORPO    20. FIELDALE CUT WINGS\tUPC 1394171411\t1\t   20LB             \tFIELDALE FARMS CORPO    21. FIELDALE CUT WINGS\tUPC\t1394171411\t\t   20LB             \tFIELDALE FARMS CORPO    22. FIELDALE TENDERS\tUPC\t1394171463\t\t   20LB             \tFIELDALE FARMS CORPO    23. PREMIO CHORIZO      \tUPC\t2836420616\t\t10   LB             \tPREMIO FOODS INC        24. PREMIO SWEET 8\" SWEET SAUSAGE     UPC\t2836420725\t\t10   LB             \tPREMIO FOODS INC        25. IMPERIAL GARDEN CHICKEN EGG ROLL 4.2 OZ  \tUPC\t88012401870\t\t4.2  OZ             \tJYC ENTERPRISE INC      26. IMPERIAL GARDEN CHICKEN SPRING ROLL 1.5 OZ      UPC\t88012401490\t\t1.5  OZ             \tJYC ENTERPRISE INC      27. FRESH MARKET  WEEKEND DRY RUB APPLEWOOD BACON   \tUPC\t73709421040\t\t12   OZ             \tWELLSHIRE FARMS INC     28. FREIRICH BEEF PASTRAMI ROUND   7.5 LB    \tUPC\t3797100135\t\t7.5  LB             \tFREIRICH FOODS INC      29. FRESKET GOURMET WHITE CHICKEN SALAD   5 LB      UPC\t7790405199\t\t5    LB             \tELEVATION FOODS LLC     30. GOURMET MINI MEATLOAF W/KET\tUPC\t70612903379\t    5CT             \tGOURMET BOUTIQUE LLC    31. SPRINGER FC SAVORY WINGS   \tUPC\t1394104203\t\t5    LB             \tFIELDALE FARMS CORPO    32. SPRINGER FC SAVORY WINGS   \tUPC\t1394104203\t\t5    LB             \tFIELDALE FARMS CORPO    33. SMTHFIELD BACON BITS 5LB   UPC 7080014265\t\t    5LB             \tSMITHFIELD PACKAGED     34. TFM SPLIT BREAST    \tUPC\t1394107059\t   40LB             \tFIELDALE FARMS CORPO    35. TFM SPLIT BREAST    \tUPC\t1394107059\t   40LB             \tFIELDALE FARMS CORPO    36. FREIRICH ANGUS BEEF FRANK BULK 5 LB      \tUPC\t3797110706\t\t5    LB             \tFREIRICH FOODS INC      37. FREIRICH ANGUS BEEF FRANK BULK 5 LB      \tUPC\t3797110706\t\t5    LB             \tFREIRICH FOODS INC      38. VERONI  PRESLICED PROSCIUTTO ITLIANO   4OZ      UPC\t85680000657\t\t4    OZ             \tVERONI USA INC          39. VERONI  PRESLICED PROSCIUTTO ITLIANO   4OZ      \tUPC\t85680000657\t\t4    OZ             \tVERONI USA INC          40. VERONI PRE SLICED SALAME CALABRESE   4 OZ\tUPC\t856",
+          "_query_term": "dog"
+        }
+      ],
+      "notes": "Only 1 of 107 raw records pass strict filter. Most records are human food (e.g. 'hot dog buns') triggered by broad keyword queries. openFDA is confirmed a poor source for this project; FDA CVM XLSX should be used as the primary US source."
+    },
+    "canada": {
+      "source": "Canada CFIA + Consumer Product Safety recalls",
+      "file": "canada_cfia_recalls_raw.csv",
+      "total_rows": 10315,
+      "candidate_count": 13,
+      "excluded_count": 10302,
+      "borderline_count": 0,
+      "candidate_method": "strict inclusion terms on Title + Product + Issue + Category",
+      "organization_candidate_breakdown": {
+        "Consumer product safety": 13
+      },
+      "missing_values": {
+        "Title": {
+          "missing": 0,
+          "present": 10315,
+          "pct_missing": 0.0
+        },
+        "Product": {
+          "missing": 8083,
+          "present": 2232,
+          "pct_missing": 78.4
+        },
+        "Issue": {
+          "missing": 2778,
+          "present": 7537,
+          "pct_missing": 26.9
+        },
+        "Category": {
+          "missing": 0,
+          "present": 10315,
+          "pct_missing": 0.0
+        },
+        "Organization": {
+          "missing": 0,
+          "present": 10315,
+          "pct_missing": 0.0
+        },
+        "Recall class": {
+          "missing": 5054,
+          "present": 5261,
+          "pct_missing": 49.0
+        },
+        "Last updated": {
+          "missing": 0,
+          "present": 10315,
+          "pct_missing": 0.0
+        },
+        "URL": {
+          "missing": 0,
+          "present": 10315,
+          "pct_missing": 0.0
+        }
+      },
+      "candidate_examples": [
+        {
+          "Title": "Expanded Recall: Certain Puppy Love and Puppy World  Brand raw Pet Treats recalled due to possible Salmonella contamination",
+          "Product": "Certain Puppy Love and Puppy World Pet Treats",
+          "Issue": "Microbial hazard",
+          "Category": "Pet Care/Food",
+          "Organization": "Consumer product safety",
+          "Recall class": "",
+          "Last updated": "2025-11-04",
+          "URL": "https://recalls-rappels.canada.ca/en/alert-recall/expanded-recall-certain-puppy-love-and-puppy-world-brand-raw-pet-treats-recalled-due",
+          "_scope_reason": "matched: 'pet treat'"
+        },
+        {
+          "Title": "  Radagast Pet Food, Inc. recalls various Rad Cat Raw Diet Pet Food ",
+          "Product": "",
+          "Issue": "",
+          "Category": "Other",
+          "Organization": "Consumer product safety",
+          "Recall class": "",
+          "Last updated": "2018-09-11",
+          "URL": "https://recalls-rappels.canada.ca/en/alert-recall/radagast-pet-food-inc-recalls-various-rad-cat-raw-diet-pet-food",
+          "_scope_reason": "matched: 'pet food'"
+        },
+        {
+          "Title": "  K9 Natural Ltd recalls K9 Natural Frozen Chicken Feast Raw Pet Food 11lb bags ",
+          "Product": "K9 Natural Frozen Chicken Feast 11lb bags with the batch number of #150517 and an expiration date of 15NOV2018.",
+          "Issue": "Microbial hazard",
+          "Category": "Household items - Other",
+          "Organization": "Consumer product safety",
+          "Recall class": "",
+          "Last updated": "2018-07-19",
+          "URL": "https://recalls-rappels.canada.ca/en/alert-recall/k9-natural-ltd-recalls-k9-natural-frozen-chicken-feast-raw-pet-food-11lb-bags",
+          "_scope_reason": "matched: 'pet food'"
+        },
+        {
+          "Title": "  Radagast Pet Food Inc. recalls Rad Cat Raw Diet Free-Range Pet Food ",
+          "Product": "",
+          "Issue": "",
+          "Category": "Household items - Other",
+          "Organization": "Consumer product safety",
+          "Recall class": "",
+          "Last updated": "2018-07-19",
+          "URL": "https://recalls-rappels.canada.ca/en/alert-recall/radagast-pet-food-inc-recalls-rad-cat-raw-diet-free-range-pet-food",
+          "_scope_reason": "matched: 'pet food'"
+        },
+        {
+          "Title": "  Euro-Can Manufacturing Inc. recalls bulk and prepackaged Junglemax and Selection brand pig ears sold as dog treats ",
+          "Product": "",
+          "Issue": "Chemical hazard",
+          "Category": "Household items - Specialized products",
+          "Organization": "Consumer product safety",
+          "Recall class": "",
+          "Last updated": "2017-05-09",
+          "URL": "https://recalls-rappels.canada.ca/en/alert-recall/euro-can-manufacturing-inc-recalls-bulk-and-prepackaged-junglemax-and-selection-brand",
+          "_scope_reason": "matched: 'dog treat'"
+        },
+        {
+          "Title": "  Radagast Pet Food, Inc. recalls Rad Cat Raw Diet® ",
+          "Product": "",
+          "Issue": "",
+          "Category": "Other",
+          "Organization": "Consumer product safety",
+          "Recall class": "",
+          "Last updated": "2016-07-11",
+          "URL": "https://recalls-rappels.canada.ca/en/alert-recall/radagast-pet-food-inc-recalls-rad-cat-raw-dietr",
+          "_scope_reason": "matched: 'pet food'"
+        },
+        {
+          "Title": "  Your True Companion Pet Products Recalls True Raw Choice Bulk Dehydrated Natural Pet Treats ",
+          "Product": "",
+          "Issue": "",
+          "Category": "Consumer products",
+          "Organization": "Consumer product safety",
+          "Recall class": "",
+          "Last updated": "2013-11-20",
+          "URL": "https://recalls-rappels.canada.ca/en/alert-recall/your-true-companion-pet-products-recalls-true-raw-choice-bulk-dehydrated-natural-pet",
+          "_scope_reason": "matched: 'pet treat'"
+        },
+        {
+          "Title": "  Expanded recall: Various dry pet food products and treats manufactured by Natura Pet Products, Inc. ",
+          "Product": "",
+          "Issue": "",
+          "Category": "Consumer products",
+          "Organization": "Consumer product safety",
+          "Recall class": "",
+          "Last updated": "2013-07-16",
+          "URL": "https://recalls-rappels.canada.ca/en/alert-recall/expanded-recall-various-dry-pet-food-products-and-treats-manufactured-natura-pet",
+          "_scope_reason": "matched: 'pet food'"
+        },
+        {
+          "Title": "  Expanded recall: Dry pet food manufactured by Natura Pet Products, Inc. ",
+          "Product": "",
+          "Issue": "",
+          "Category": "Consumer products",
+          "Organization": "Consumer product safety",
+          "Recall class": "",
+          "Last updated": "2013-05-06",
+          "URL": "https://recalls-rappels.canada.ca/en/alert-recall/expanded-recall-dry-pet-food-manufactured-natura-pet-products-inc",
+          "_scope_reason": "matched: 'pet food'"
+        },
+        {
+          "Title": "  Dry pet food manufactured by Natura Pet Products Inc. ",
+          "Product": "",
+          "Issue": "",
+          "Category": "Consumer products",
+          "Organization": "Consumer product safety",
+          "Recall class": "",
+          "Last updated": "2013-04-15",
+          "URL": "https://recalls-rappels.canada.ca/en/alert-recall/dry-pet-food-manufactured-natura-pet-products-inc",
+          "_scope_reason": "matched: 'pet food'"
+        }
+      ],
+      "rejected_examples": [
+        {
+          "Title": "NANÖ Green Children’s Bathrobe recalled due to flammability hazard",
+          "Product": "NANÖ Green Children’s Bathrobe ",
+          "Issue": "Flammability hazard",
+          "Category": "Clothing",
+          "Organization": "Consumer product safety",
+          "Last updated": "2026-05-01",
+          "_scope_reason": "no strict pet-food phrase"
+        },
+        {
+          "Title": "Certain Broccoli Carbonara Pasta Salad recalled due to Listeria monocytogenes",
+          "Product": "Broccoli Carbonara Pasta Salad",
+          "Issue": "Listeria",
+          "Category": "Pasta",
+          "Organization": "CFIA",
+          "Last updated": "2026-05-01",
+          "_scope_reason": "no strict pet-food phrase"
+        },
+        {
+          "Title": "Various Salem Foods brand Ground Spices and Spice Blends recalled due to undeclared wheat and mustard",
+          "Product": "Ground Spices and Spice Blends",
+          "Issue": "Wheat - Gluten - Mustard",
+          "Category": "Herbs and spices",
+          "Organization": "CFIA",
+          "Last updated": "2026-05-01",
+          "_scope_reason": "no strict pet-food phrase"
+        },
+        {
+          "Title": "Magnetic Cube recalled due to ingestion hazard",
+          "Product": "Magnetic Cube",
+          "Issue": "Ingestion hazard",
+          "Category": "Toys and games",
+          "Organization": "Consumer product safety",
+          "Last updated": "2026-05-01",
+          "_scope_reason": "no strict pet-food phrase"
+        },
+        {
+          "Title": "Nebulous Star brand children's dressing gowns and ponchos recalled due to flammability hazard ",
+          "Product": "Nebulous Star brand children's dressing gowns and ponchos",
+          "Issue": "Flammability hazard",
+          "Category": "Clothing",
+          "Organization": "Consumer product safety",
+          "Last updated": "2026-04-30",
+          "_scope_reason": "no strict pet-food phrase"
+        },
+        {
+          "Title": "Red plush robe with holiday all over print recalled due to flammability hazard",
+          "Product": "Souris Mini - Red plush robe with holiday all over print ",
+          "Issue": "Flammability hazard",
+          "Category": "Clothing",
+          "Organization": "Consumer product safety",
+          "Last updated": "2026-04-30",
+          "_scope_reason": "no strict pet-food phrase"
+        },
+        {
+          "Title": "Pink nightgown with holiday all over print recalled due to flammability hazard",
+          "Product": "Souris Mini - Pink nightgown with holiday all over print",
+          "Issue": "Flammability hazard",
+          "Category": "Clothing",
+          "Organization": "Consumer product safety",
+          "Last updated": "2026-04-30",
+          "_scope_reason": "no strict pet-food phrase"
+        },
+        {
+          "Title": "Build-A-Bear Workshop Heartwarming Hugs Bear 2 recalled due to choking hazard",
+          "Product": "Build-A-Bear Workshop Heartwarming Hugs Bear 2",
+          "Issue": "Choking hazard",
+          "Category": "Toys and games",
+          "Organization": "Consumer product safety",
+          "Last updated": "2026-04-30",
+          "_scope_reason": "no strict pet-food phrase"
+        },
+        {
+          "Title": "Recipe brand 7\" Pizza Pomo/Mozz recalled due to pieces of plastic  ",
+          "Product": "7\" Pizza Pomo/Mozz",
+          "Issue": "Extraneous Material",
+          "Category": "Multiple food items",
+          "Organization": "CFIA",
+          "Last updated": "2026-04-30",
+          "_scope_reason": "no strict pet-food phrase"
+        },
+        {
+          "Title": "Stephan Baby Boo Bunnie and Friends Children’s Toys recalled due to choking and injury hazards",
+          "Product": "Stephan Baby Boo Bunnie and Friends Comfort Toys—Distilled Water Filled Cube Component",
+          "Issue": "Choking hazard - Injury hazard",
+          "Category": "Toys and games",
+          "Organization": "Consumer product safety",
+          "Last updated": "2026-04-30",
+          "_scope_reason": "no strict pet-food phrase"
+        }
+      ],
+      "notes": "13 of 10315 Canada CFIA/CPS records match strict pet-food inclusion terms. The saved Canada raw file is intentionally broad (CFIA food/feed plus Consumer Product Safety), so most rows are expected to be human food or non-pet consumer-product recalls."
+    }
+  },
+  "overall": {
+    "total_raw_rows": 11845,
+    "total_candidates_across_sources": 122,
+    "note": "Candidates are not deduplicated across sources. Deduplication and final filtering happen in Phase 3."
+  }
+}

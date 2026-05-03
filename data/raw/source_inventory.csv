@@ -1,0 +1,13 @@
+source_name,source_url_or_query,rows_found,rows_saved,notes
+FDA CVM Animal & Veterinary Recalls XLSX,https://www.fda.gov/animal-veterinary/safety-health/recalls-withdrawals,49,49,Primary source. All animal/veterinary recall types included; scope filter in Phase 2.
+Data.gov FDA Pet Food Recalls XLS (legacy 2009),https://www.accessdata.fda.gov/scripts/newpetfoodrecalls/PetFoodRecallProductsList2009.xls,0,0,Unavailable: 404 Not Found
+openFDA Food Enforcement API,https://api.fda.gov/food/enforcement.json?search=product_description:dog,107,107,"Broad keyword queries (dog,cat,pet,treat,chew,puppy,kitten). Deduplicated by event_id/recall_number."
+UK FSA Food Alerts (Linked Data API),https://data.food.gov.uk/food-alerts/id.json?_limit=10000,1314,1314,Full bulk download OGL v3. Scope filtering in Phase 2.
+EU RASFF — Rapid Alert System for Food and Feed,https://webgate.ec.europa.eu/rasff-window/screen/search,0,0,Access restricted: requires EU Login / iRASFF authentication.
+EU RASFF Manual Export (pet food category),https://webgate.ec.europa.eu/rasff-window/screen/search,60,60,Manually exported from RASFF consumer portal. Category=pet food. 2019-2026.
+German BVL — Bundesamt für Verbraucherschutz,https://www.bvl.bund.de,0,0,No structured public API found. Alerts HTML-only.
+French ANSES — Agence nationale de sécurité sanitaire,https://www.anses.fr/fr/content/les-alertes-alimentaires,0,0,No structured public API found. Alerts HTML/PDF only.
+Canada CFIA + Consumer Product Safety recalls (JSON),https://recalls-rappels.canada.ca/sites/default/files/opendata-donneesouvertes/HCRSAMOpenData.json,33473,10315,"Total JSON records: 33,473; saved 10,315 (CFIA + Consumer product safety). Licence: Open Government Licence - Canada v2.0 — https://open.canada.ca/en/open-government-licence-canada. Phase 2 filters to pet-food scope."
+Australia FSANZ Food Recalls,https://www.foodstandards.gov.au/food-recalls,0,0,Insufficient data: RSS feed confirmed but contains only 10 most-recent items.  No bulk export or JSON API found.
+New Zealand MPI Food Recalls / ACVM,https://www.mpi.govt.nz/food-safety-home/food-recalls-and-complaints/,0,0,Inaccessible: Incapsula bot-protection returns challenge page for non-browser HTTP requests.
+Australia ACCC Product Safety Recalls,https://www.productsafety.gov.au/recalls,0,0,No public API: Drupal JSON:API disabled; no bulk export found.

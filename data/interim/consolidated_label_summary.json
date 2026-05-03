@@ -1,0 +1,55 @@
+{
+  "consolidation_timestamp": "2026-05-03T16:38:36Z",
+  "phase": "Phase 4.5 — Label Consolidation",
+  "input_file": "data/interim/auto_labeled_recalls.csv",
+  "uncertain_input_file": "data/interim/uncertain_recalls.csv",
+  "outputs": {
+    "consolidated_labeled_recalls": "data/interim/consolidated_labeled_recalls.csv",
+    "consolidated_label_summary": "data/interim/consolidated_label_summary.json"
+  },
+  "detailed_labels_preserved_in_input": true,
+  "uncertain_rows_excluded": true,
+  "final_label_columns": [
+    "PATHOGEN_CONTAMINATION",
+    "CHEMICAL_OR_NUTRITIONAL_RISK",
+    "PHYSICAL_OR_QUALITY_ISSUE"
+  ],
+  "final_label_map": {
+    "PATHOGEN_CONTAMINATION": [
+      "PATHOGEN_CONTAMINATION"
+    ],
+    "CHEMICAL_OR_NUTRITIONAL_RISK": [
+      "MYCOTOXIN_OR_CHEMICAL_CONTAMINATION",
+      "NUTRITIONAL_IMBALANCE_OR_TOXICITY"
+    ],
+    "PHYSICAL_OR_QUALITY_ISSUE": [
+      "FOREIGN_MATERIAL_CONTAMINATION",
+      "LABELING_OR_UNDECLARED_INGREDIENT_ISSUE",
+      "QUALITY_OR_PROCESS_CONTROL_ISSUE"
+    ]
+  },
+  "final_labeled_rows": 103,
+  "uncertain_rows": 14,
+  "rows_with_multiple_final_labels": 3,
+  "positive_count_per_final_label": {
+    "PATHOGEN_CONTAMINATION": 60,
+    "CHEMICAL_OR_NUTRITIONAL_RISK": 20,
+    "PHYSICAL_OR_QUALITY_ISSUE": 26
+  },
+  "positive_count_per_detailed_label": {
+    "PATHOGEN_CONTAMINATION": 60,
+    "MYCOTOXIN_OR_CHEMICAL_CONTAMINATION": 10,
+    "NUTRITIONAL_IMBALANCE_OR_TOXICITY": 12,
+    "FOREIGN_MATERIAL_CONTAMINATION": 12,
+    "LABELING_OR_UNDECLARED_INGREDIENT_ISSUE": 2,
+    "QUALITY_OR_PROCESS_CONTROL_ISSUE": 14
+  },
+  "constraints": [
+    "No training",
+    "No embeddings",
+    "No train/validation/test split",
+    "No synthetic data",
+    "auto_labeled_recalls.csv not overwritten",
+    "uncertain_recalls.csv not overwritten"
+  ]
+}
