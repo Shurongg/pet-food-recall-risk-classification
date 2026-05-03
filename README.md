@@ -11,7 +11,7 @@ This project was built as an academic assignment for the Information Retrieval c
 Completed through:
 
 ```text
-Phase 8 — Final Test Evaluation
+Phase 11 — Hugging Face Model Preparation (local)
 ```
 
 Implemented so far:
@@ -26,14 +26,52 @@ Implemented so far:
 - Frozen transformer embedding generation
 - Multi-label classifier training
 - Final held-out test evaluation
+- Prediction script (`src/predict.py`)
+- Hugging Face dataset files prepared locally (`hf_dataset/`)
+- Hugging Face model files prepared locally (`hf_model/`)
 
 Not completed yet:
 
-- Prediction script integration
 - Hugging Face dataset upload
 - Hugging Face model upload
 - Hugging Face Space / Gradio deployment
 - Final 2-page assignment report
+
+### Hugging Face dataset files (local, not yet uploaded)
+
+The `hf_dataset/` folder contains the dataset card and split CSVs ready for
+upload to a Hugging Face Dataset repository:
+
+```text
+hf_dataset/
+├── README.md          # HF dataset card (YAML front matter + documentation)
+├── train.csv          # 73 rows
+├── validation.csv     # 15 rows
+└── test.csv           # 15 rows
+```
+
+Files are copies of `data/processed/{train,validation,test}.csv` and have not
+been modified.
+
+### Hugging Face model files (local, not yet uploaded)
+
+The `hf_model/` folder contains the model card and classifier artifacts ready
+for upload to a Hugging Face Model repository:
+
+```text
+hf_model/
+├── README.md              # HF model card (YAML front matter + documentation)
+├── classifier.joblib      # Trained OneVsRestClassifier(LogisticRegression)
+├── thresholds.json        # Per-label prediction thresholds (validation-tuned)
+├── label_columns.json     # Ordered output label names
+├── model_config.json      # Training provenance and selection metadata
+├── test_metrics.json      # Final held-out test metrics
+└── per_label_metrics.csv  # Per-label precision / recall / F1 on test set
+```
+
+The frozen transformer encoder (`sentence-transformers/all-MiniLM-L6-v2`) is
+not included — it is loaded at inference time via the `sentence-transformers`
+library.
 
 ---
 
@@ -521,26 +559,14 @@ python src/predict.py \
 
 ## Hugging Face Deployment Status
 
-Planned but not yet completed.
+Completed:
 
-Planned deliverables:
+- Dataset: https://huggingface.co/datasets/ShurongSR/pet-food-recall-risk
+- Model: https://huggingface.co/ShurongSR/pet-food-recall-risk-classifier
 
-- Hugging Face Dataset repository
-- Hugging Face Model repository
+Pending:
+
 - Hugging Face Space with Gradio demo
-
-The final demo will allow users to enter:
-
-- brand name
-- product description
-- recall reason
-
-and return:
-
-- predicted risk label(s)
-- model scores if available
-- thresholds used
-- educational disclaimer
 
 ---
 
