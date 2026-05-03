@@ -563,10 +563,7 @@ Completed:
 
 - Dataset: https://huggingface.co/datasets/ShurongSR/pet-food-recall-risk
 - Model: https://huggingface.co/ShurongSR/pet-food-recall-risk-classifier
-
-Pending:
-
-- Hugging Face Space with Gradio demo
+- Demo Space: https://huggingface.co/spaces/ShurongSR/pet-food-recall-risk-demo
 
 ---
 
