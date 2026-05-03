@@ -8,13 +8,9 @@ This project was built as an academic assignment for the Information Retrieval c
 
 ## Current Project Status
 
-Completed through:
+**Project complete — submitted for assignment.**
 
-```text
-Phase 11 — Hugging Face Model Preparation (local)
-```
-
-Implemented so far:
+All phases implemented:
 
 - Multi-source raw data collection
 - Data inspection
@@ -27,17 +23,12 @@ Implemented so far:
 - Multi-label classifier training
 - Final held-out test evaluation
 - Prediction script (`src/predict.py`)
-- Hugging Face dataset files prepared locally (`hf_dataset/`)
-- Hugging Face model files prepared locally (`hf_model/`)
-
-Not completed yet:
-
 - Hugging Face dataset upload
 - Hugging Face model upload
 - Hugging Face Space / Gradio deployment
-- Final 2-page assignment report
+- Final 2-page assignment report (`report/assignment_report.md`)
 
-### Hugging Face dataset files (local, not yet uploaded)
+### Hugging Face dataset files (local copy)
 
 The `hf_dataset/` folder contains the dataset card and split CSVs ready for
 upload to a Hugging Face Dataset repository:
@@ -53,7 +44,7 @@ hf_dataset/
 Files are copies of `data/processed/{train,validation,test}.csv` and have not
 been modified.
 
-### Hugging Face model files (local, not yet uploaded)
+### Hugging Face model files (local copy)
 
 The `hf_model/` folder contains the model card and classifier artifacts ready
 for upload to a Hugging Face Model repository:
@@ -96,7 +87,7 @@ This project addresses those requirements as follows:
 | Trained classifier | Multi-label classifiers trained on transformer embeddings |
 | Several classifiers | Dummy baseline, Logistic Regression, Linear SVM, Random Forest |
 | Evaluation | Validation comparison and held-out test evaluation |
-| Demo | Planned Gradio app on Hugging Face Spaces |
+| Demo | Gradio app on Hugging Face Spaces — https://huggingface.co/spaces/ShurongSR/pet-food-recall-risk-demo |
 
 ---
 
@@ -450,7 +441,7 @@ pet-food-recall-risk-classification/
 ## Setup
 
 ```bash
-git clone https://github.com/<your-username>/pet-food-recall-risk-classification.git
+git clone https://github.com/Shurongg/pet-food-recall-risk-classification.git
 cd pet-food-recall-risk-classification
 
 python -m venv .venv
@@ -543,10 +534,6 @@ python src/evaluate.py \
 ```
 
 ### Phase 9 — Prediction script
-
-Planned / in progress.
-
-Example target command:
 
 ```bash
 python src/predict.py \
