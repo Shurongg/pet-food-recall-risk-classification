@@ -1,7 +1,7 @@
 # Pet Food Recall Risk Classification with Transformer Embeddings
 
 *Assignment report — Information Retrieval*
-*Author: Shurong Chen | Date: 2026-05-03*
+*Date: 2026-05-03*
 
 ---
 
